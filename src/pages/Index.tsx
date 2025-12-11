@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import Icon from '@/components/ui/icon';
+import Converter from '@/components/Converter';
 
 type HistoryItem = {
   expression: string;
@@ -324,15 +325,15 @@ const Index = () => {
             </Card>
           </div>
 
-          <div className="lg:col-span-1">
-            <Card className="p-6 backdrop-blur-sm bg-card/90 border-2 border-secondary/30 shadow-[0_0_30px_rgba(217,70,239,0.2)] h-full">
+          <div className="lg:col-span-1 space-y-4">
+            <Card className="p-6 backdrop-blur-sm bg-card/90 border-2 border-secondary/30 shadow-[0_0_30px_rgba(217,70,239,0.2)]">
               <div className="flex items-center gap-2 mb-4">
                 <Icon name="History" size={20} className="text-secondary" />
                 <h2 className="text-xl font-bold" style={{ fontFamily: 'Orbitron, sans-serif' }}>
                   История
                 </h2>
               </div>
-              <ScrollArea className="h-[500px] pr-4">
+              <ScrollArea className="h-[300px] pr-4">
                 {history.length === 0 ? (
                   <div className="text-center text-muted-foreground py-8">
                     <Icon name="Calculator" size={48} className="mx-auto mb-2 opacity-30" />
@@ -359,6 +360,8 @@ const Index = () => {
                 )}
               </ScrollArea>
             </Card>
+
+            <Converter />
           </div>
         </div>
       </div>
